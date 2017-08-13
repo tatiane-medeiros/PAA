@@ -1,6 +1,6 @@
 def firstZ(b, e):
     mid = int((b+e)/2)
-    #para quando encontrar 1 seguido de 0
+    #para quando encontrar 1 seguido de 0 e retorna a posição do primeiro 0
     if (e-b) <= 1:
         if a[mid] == 1:
             return (mid + 1)
@@ -12,10 +12,8 @@ def firstZ(b, e):
         else:
             return firstZ(b, mid)
 
-
 a = []
 t = int(input())
-
 while(t > 0):
     n = int(input())
     for i in range(n):
