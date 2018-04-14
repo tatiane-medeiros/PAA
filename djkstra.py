@@ -17,10 +17,10 @@ def dijkstra(start, graph, dist):
 
 # n é a quantidade de vértices e m é a quantidade de arestas
 # O grafo é bidirecionado
-n, m = map(int, input().split(' '))
+n, m = map(int, input().split())
 graph = {}
 for j in range(m):
-    u, v, c = map(int, input().split(' '))
+    u, v, c = map(int, input().split())
     if u not in graph:
         graph[u] = [[v, c]]
     else:
@@ -29,5 +29,5 @@ for j in range(m):
         graph[v] = [[u, c]]
     else:
         graph[v].append([u, c])
-dist = [2 ** 33 for l in range(n + 1)]
-dist = dijkstra(start=1, graph=graph, dist=dist)
+dist = [2 ** 10 for l in range(n + 1)]
+dist = dijkstra(1, graph, dist)
