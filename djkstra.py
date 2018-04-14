@@ -1,17 +1,16 @@
 import queue
 
-#Implementação do algoritmo de Dijkstra em python
 def dijkstra(start, graph, dist):
-    dist[int(start)] = 0
+    dist[start] = 0
     pq = queue.PriorityQueue()
     pq.put([0, start])
     while not pq.empty():
         node = pq.get()
-        if int(node[0]) > dist[int(node[1])]:
+        if  node[0] > dist[node[1]]:
             continue
         for v in graph[node[1]]:
-            if int(dist[v[0]]) > int(node[0]) + int(v[1]):
-                dist[v[0]] = int(node[0]) + int(v[1])
+            if dist[v[0]] > node[0] + v[1]:
+                dist[v[0]] = node[0] + v[1]
                 pq.put([dist[v[0]], v[0]])
     return dist
 
